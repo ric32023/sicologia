@@ -1,9 +1,15 @@
+<?php
+@session_start();
+if($_SESSION['accesoMental']=="si")
+{
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sicologia</title>
+  <title>MentalPar Group S.A.S</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -29,7 +35,7 @@
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <!-- Select2 -->
   <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
-  
+
     <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,14 +49,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
- 
+
 <div class="wrapper">
-<?php include('header.php'); ?>
-  
-    
- 
+<?php include_once 'header.php'; ?>
+
+
+
   <!-- Left side column. contains the logo and sidebar -->
-  <?php include('menu.php') ?> 
+  <?php include_once 'menu.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -74,7 +80,7 @@
       </div>
       <!-- /.row -->
       <!-- Main row -->
-    
+
       <!-- /.row (main row) -->
 
     </section>
@@ -85,7 +91,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2024 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
 
@@ -389,9 +395,19 @@
       showInputs: false
     })
   })
+  
+  
+  
+        
 </script>
  <!-- jQuery 3 -->
-                     
+
 
 </body>
 </html>
+<?php
+}
+else{
+  echo"<script>location.href='login.php'</script>";
+}
+ ?>

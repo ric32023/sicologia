@@ -27,15 +27,15 @@ if($_REQUEST['accion']==1){
 			echo"<script>document.getElementById('txtvalorcontrato').value='".$cocargo['coe_valorcontrato']."'</script>";
 		}
 		else{
-			$guarda=mysql_query("INSERT INTO contrato_empresa (emp_cod,coe_numerocontrato,coe_fechainicio,coe_fechafin,coe_valorcontrato,coe_cntencuesta,coe_cntpersona) VALUES(".$cboempresa.",'".$txtcontrato."',
-			'".$txtfechainicio."','".$txtfechafin."','".$txtvalorcontrato."','".$txtencuesta."','".$txtpersona."')");
+			$guarda=mysql_query("insert into contrato_empresa (emp_cod,coe_numerocontrato,coe_fechainicio,coe_fechafin,coe_valorcontrato,coe_cntencuesta,coe_cntpersona,coe_estado)values(".$cboempresa.",'".$txtcontrato."','".$txtfechainicio."','".$txtfechafin."','".$txtvalorcontrato."','".$txtencuesta."','".$txtpersona."','A')");
 			if($guarda==true){
 				echo"<script>alert('Agregado con Exito')</script>";
 				echo"<script>llamar_contrato()</script>";
 			}
 			else{
-				echo"<script>alert('Error')</script>";	
+				echo"<script>alert('Error.')</script>";	
 			}
+
 		}	
 	}
 	else{
